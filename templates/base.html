@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"  data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT productivity tracker</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    >
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+</head>
+<body class="container" >
+    <header >
+        <nav>
+            <ul>
+                <li><strong>IT prod. tracker</strong></li>
+            </ul>
+            <ul>
+                <li>
+                    {% if is_logged %}
+                    <form method='get' action="/logout"><input class="secondary outline" type="submit" value="logout"></form>
+                    {% else %}
+                    <form method='get' action="/logout"><input class="secondary outline" id="hidden" type="submit" value="logout"></form>
+                    {% endif %}
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container-fluid">
+        
+
+        {%block body%}
+            
+        {%endblock%}
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

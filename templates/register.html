@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block body %}
+<form action="/register" method="post">
+    <input type="text" name="name" placeholder="name" required><br>
+    <input type="password" name="password" placeholder="password" reuired><br>
+    <input type="submit" value="register" class="outline">
+</form>
+{{message}}
+{% endblock %}

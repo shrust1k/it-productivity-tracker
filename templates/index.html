@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+{% if is_logged %}
+    <article>{% include 'add_record.html' %}</article>
+{% else %}
+    {% include 'login.html' %}
+{% endif %}
+
+{{message}}
+
+
+
+{% if records %}
+    <p>Last records</p>
+    {% for record in records %}
+        <article>
+            
+            <p>{{record.text}}</p>
+            <footer><p>{{record.dateCreated}}</p></footer>
+        </article>
+
+    {% endfor %}
+{% endif %}
+
+{% endblock %}

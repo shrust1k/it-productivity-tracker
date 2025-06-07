@@ -1,0 +1,7 @@
+main {
+    max-width: 50vw;
+}
+
+#hidden {
+    visibility: hidden;
+}
